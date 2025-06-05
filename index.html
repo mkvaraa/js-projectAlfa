@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" href="./assets/images/icon.png" type="image/x-icon">
+    <title>GVC</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-login">
+            <img src="./assets/images/logo.JPG" alt="GVC logo" class="logo">
+            <h2>Galaxy Volleyball Club</h2>
+        </div>
+        <button type="button" class="login-button">Log In</button>
+    </header>
+
+    <div class="content">
+        <form id="user-form" class="user-form auth-only">
+            <div class="form-group">
+                <label for="name">Name <span class="required">*</span></label>
+                <input type="text" id="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telegram">Telegram username <span class="required">*</span></label>
+                <input type="text" id="telegram" placeholder="@username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lessons">Num of sessions <span class="required">*</span></label>
+                <input type="number" id="lessons" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="purchase-date">Purchase date <span class="required">*</span></label>
+                <input type="date" id="purchase-date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category <span class="required">*</span></label>
+                <select id="category" required>
+                    <option value="">Choose</option>
+                    <option value="child_male">Chd.Boy</option>
+                    <option value="child_female">Chd.Girl</option>
+                    <option value="general">General gr.</option>
+                    <option value="amateurs">Amateur</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+            </div>
+
+            <button type="submit" class="add-button">Add</button>
+        </form>
+
+        <div class="filters-container">
+            <div class="divider"></div>
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="category-filter">Filter by category:</label>
+                    <select id="category-filter">
+                        <option value="all">All categories</option>
+                        <option value="child_male">Chd.Boy</option>
+                        <option value="child_female">Chd.Girl</option>
+                        <option value="general">General gr.</option>
+                        <option value="amateurs">Amateur</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+
+                <div class="search-group">
+                    <label for="search-input">Search:</label>
+                    <input type="text" id="search-input" placeholder="Name or Telegram">
+                </div>
+
+                <button id="reset-filters" class="reset-btn">Reset filters</button>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <ul class="added-users" id="users-list">
+            <!-- here will be users -->
+        </ul>
+    </div>
+
+
+
+    <!-- login module -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <h2>Login</h2>
+            <br>
+            <div class="input-group">
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" placeholder="Enter your username">
+            </div>
+            <div class="input-group">
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" placeholder="Enter your password">
+            </div>
+            <button id="login-submit" class="login-submit-btn">Log In</button>
+            <p id="login-error" class="error-message"></p>
+        </div>
+    </div>
+
+    <script type="module" src="./assets/js/main.js"></script>
+</body>
+
+</html>

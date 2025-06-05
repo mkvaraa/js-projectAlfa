@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href="../assets/css/profile.css">
+    <link rel="icon" href="../assets/images/icon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <div class="profile-box">
+            <div class="top-bar">
+                <img class="avatar" src="../assets/images/logo.JPG" alt="Avatar">
+                <div class="nav-tabs">
+                    <button class="tab-btn active" data-tab="profile">My Profile</button>
+                    <button class="tab-btn" data-tab="purchases">Purchase History</button>
+                    <button class="tab-btn" data-tab="attendance">Visit History</button>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="sidebar">Achievements</div>
+                <div class="content">
+                    <div id="profile" class="tab-content active">
+                        <div class="profile-info">
+                           <!-- here will be users data  -->
+                        </div>
+                    </div>
+                    <div id="purchases" class="tab-content">Here will be Purchase History</div>
+                    <div id="attendance" class="tab-content">Here will be Visit History</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./tabs.js"></script>
+    <script src="./profile.js"></script>
+</body>
+
+</html>

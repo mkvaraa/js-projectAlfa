@@ -1,0 +1,276 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #3a2aa4;
+}
+
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.profile-box {
+  background-color: white;
+  width: 90%;
+  max-width: 1000px;
+  border-radius: 12px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ВЕРХНЯЯ ПАНЕЛЬ */
+.top-bar {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #3a2aa4;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  border: 3px solid #3a2aa4;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 20px;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #3a2aa4;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  padding: 8px 0;
+}
+
+.tab-btn.active {
+  border-color: #3a2aa4;
+  font-weight: bold;
+}
+
+/* ОСНОВНОЙ КОНТЕНТ */
+.main-content {
+  display: flex;
+  gap: 20px;
+}
+
+.sidebar {
+  width: auto;
+  background-color: #f3f3ff;
+  color: #3a2aa4;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+.content {
+  flex: 1;
+}
+
+.tab-content {
+  display: none;
+  color: #3a2aa4;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* КНОПКИ */
+.button-row {
+  margin-left: 120px;
+  margin-top: 30px;
+  display: none; /* скрыто по умолчанию */
+  justify-content: space-around;
+  max-width: calc(100% - 120px);
+}
+
+.tab-content#profile.active + .button-row {
+  display: flex;
+}
+
+.btn {
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+.btn.orange {
+  background-color: #ff6b00;
+}
+
+.btn.blue {
+  background-color: #3a2aa4;
+}
+
+.btn.red {
+  background-color: red;
+}
+
+/* МОДАЛКА С ВАУЧЕРАМИ */
+.voucher-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(34, 22, 102, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.voucher-modal.hidden {
+  display: none;
+}
+
+.voucher-content {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  width: 90%;
+  max-width: 800px;
+  position: relative;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+
+.voucher-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #3a2aa4;
+}
+
+.voucher-list {
+  padding-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+.voucher-card {
+  width: 210px;
+  flex: 0 0 auto;
+  background: linear-gradient(135deg, #3a2aa4, #6c4aff);
+  color: white;
+  border-radius: 16px;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+  height: 300px;
+  text-align: left;
+}
+
+.voucher-card:hover {
+  transform: translateY(-3px);
+}
+
+.voucher-card h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.voucher-card p {
+  font-size: 0.95em;
+  flex-grow: 1;
+  color: #e0e0ff;
+}
+
+.price {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #ffb300;
+  margin-top: 15px;
+}
+
+.discount {
+  margin-top: 5px;
+  font-size: 0.95em;
+  background: #ff6b00;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  align-self: start;
+}
+
+.close-button {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #3a2aa4;
+  font-weight: bold;
+}
+
+
+
+/* profile */
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  color: #3a2aa4;
+}
+
+.profile-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.profile-form input {
+  margin-top: 5px;
+  padding: 8px;
+  border: 1.5px solid #3a2aa4;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.profile-form input[readonly] {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: flex-start;
+}
+
+#togglePassword {
+  margin-top: 5px;
+  background-color: #3a2aa4;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  align-self: flex-start;
+}
