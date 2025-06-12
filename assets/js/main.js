@@ -1,6 +1,7 @@
 import { checkAuth, handleLogin, logout, updateUI } from './auth.js';
 import { handleFormSubmit } from './userForm.js';
 import { renderUsers } from './userList.js';
+import { saveUsers, loadUsers } from './storage.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const elements = {
@@ -43,7 +44,15 @@ document.addEventListener('DOMContentLoaded', () => {
     elements.loginSubmit.addEventListener('click', () => handleLogin(state, elements, () => updateUI(state, elements, () => renderUsers(state, elements))));
     elements.loginPassword.addEventListener('keypress', e => e.key === 'Enter' && handleLogin(state, elements, () => updateUI(state, elements, () => renderUsers(state, elements))));
 
-    elements.form.addEventListener('submit', e => handleFormSubmit(e, state, elements, () => localStorage.setItem('volleyballUsers', JSON.stringify(state.users)), () => renderUsers(state, elements)));
+    elements.form.addEventListener('submit', e => {
+        handleFormSubmit(
+            e,
+            state,
+            elements,
+            () => saveUsers(state.users),
+            () => renderUsers(state, elements)
+        );
+    });
 
     elements.categoryFilter.addEventListener('change', function () {
         state.currentFilter = this.value;
@@ -74,14 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     elements.loginModal.addEventListener('click', e => e.stopPropagation());
 
-    const saved = localStorage.getItem('volleyballUsers');
-    if (saved) {
-        try {
-            state.users = JSON.parse(saved);
-        } catch {
-            state.users = [];
-        }
-    }
-
+    state.users = loadUsers(); // заменили прямую работу с localStorage
     renderUsers(state, elements);
 });

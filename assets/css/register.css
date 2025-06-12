@@ -2,11 +2,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom right, #f0f4ff, #d3e0ff);
+    background: #3a2aa4;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+
 }
 
 
