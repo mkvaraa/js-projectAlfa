@@ -2,13 +2,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const urlParams = new URLSearchParams(window.location.search);
     const userId = parseInt(urlParams.get('userId'));
 
-    console.log(userId)
     if (isNaN(userId)) {
         document.querySelector('.profile-info').innerHTML = '<p>User not found :( </p>';
         return;
     }
 
     const users = JSON.parse(localStorage.getItem('volleyballUsers')) || [];
+
     const user = users.find(u => u.id === userId);
 
     if (!user) {
@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
     }
 
-    
     document.querySelector('.profile-info').innerHTML = `
         <h2>${user.name}</h2>
         <p><strong>Telegram:</strong> ${user.telegram}</p>
@@ -32,7 +31,7 @@ function getCategoryName(category) {
         'child_male': 'Chd.Boy',
         'child_female': 'Chd.Girl',
         'general': 'General gr.',
-        'amateurs': 'Amateur',
+        'amateur': 'Amateur',
         'advanced': 'Advanced'
     };
     return categories[category] || '—';

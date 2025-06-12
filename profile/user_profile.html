@@ -9,6 +9,19 @@
 </head>
 
 <body>
+    <header>
+        <div class="logo-login">
+            <a href="../index.html" style="text-decoration: none; display: flex; align-items: center; gap: 15px;">
+                <img src="../assets/images/logo.JPG" alt="GVC logo" class="logo">
+                <h2>Galaxy Volleyball Club</h2>
+            </a>
+        </div>
+
+        <div class="button-container">
+            <button id="logout-btn" class="logout-button">Logout</button>
+        </div>
+    </header>
+
     <div class="page-wrapper">
         <div class="profile-box">
             <div class="top-bar">
@@ -24,7 +37,7 @@
                 <div class="content">
                     <div id="profile" class="tab-content active">
                         <div class="profile-info">
-                           <!-- here will be users data  -->
+                            <!-- here will be users data  -->
                         </div>
                     </div>
                     <div id="purchases" class="tab-content">Here will be Purchase History</div>
@@ -36,6 +49,13 @@
 
     <script src="./tabs.js"></script>
     <script src="./profile.js"></script>
+
+    <script>
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            localStorage.removeItem('currentUser');
+            window.location.href = '../index.html';
+        });
+    </script>
 </body>
 
 </html>

@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -70,7 +71,7 @@ body, html {
   font-weight: bold;
   padding: 10px;
   border-radius: 10px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
 
@@ -91,12 +92,13 @@ body, html {
 .button-row {
   margin-left: 120px;
   margin-top: 30px;
-  display: none; /* скрыто по умолчанию */
+  display: none;
+  /* скрыто по умолчанию */
   justify-content: space-around;
   max-width: calc(100% - 120px);
 }
 
-.tab-content#profile.active + .button-row {
+.tab-content#profile.active+.button-row {
   display: flex;
 }
 
@@ -176,7 +178,7 @@ body, html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
   height: 300px;
   text-align: left;
@@ -273,4 +275,65 @@ body, html {
   cursor: pointer;
   font-size: 14px;
   align-self: flex-start;
+}
+
+
+
+/* Header styles */
+header {
+  max-width: 1150px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.logo-login {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+h2 {
+  color: #3a2aa4;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Logout button */
+.logout-button {
+  width: 150px;
+  height: 45px;
+  padding: 8px 20px;
+  background-color: #e60039;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #ff004c;
+  transform: scale(1.05);
 }
