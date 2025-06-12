@@ -42,7 +42,46 @@ h2 {
     font-size: 1.5rem;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.register-button,
 .login-button {
+    width: 150px;
+    height: 45px;
+    padding: 8px 20px;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.register-button {
+    background-color: #3a2aa4;
+}
+
+.register-button:hover {
+    background-color: #4e3cc2;
+    transform: scale(1.05);
+}
+
+.login-button {
+    background-color: #ff6b00;
+}
+
+.login-button:hover {
+    background-color: #ff8c00;
+    transform: scale(1.05);
+}
+
+
+/* .login-button {
     width: 150px;
     height: 45px;
     padding: 8px 20px;
@@ -59,7 +98,7 @@ h2 {
 .login-button:hover {
     background-color: #ff8c00;
     transform: scale(1.05);
-}
+} */
 
 
 @media (max-width: 768px) {
@@ -68,17 +107,17 @@ h2 {
         padding: 20px;
         gap: 20px;
     }
-    
+
     .logo-login {
         flex-direction: column;
         text-align: center;
         gap: 10px;
     }
-    
+
     .club-info {
         align-items: center;
     }
-    
+
     .logo {
         width: 80px;
         height: 80px;
@@ -126,7 +165,8 @@ label {
     color: #ff6b00;
 }
 
-input, select {
+input,
+select {
     width: 100%;
     padding: 10px 15px;
     border: 1px solid #ddd;
@@ -135,7 +175,8 @@ input, select {
     transition: border 0.3s;
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
     border-color: #3a2aa4;
     outline: none;
 }
@@ -197,7 +238,8 @@ input:focus, select:focus {
     gap: 10px;
 }
 
-.edit-btn, .delete-btn {
+.edit-btn,
+.delete-btn {
     padding: 8px 15px;
     border: none;
     border-radius: 6px;
@@ -226,7 +268,7 @@ input:focus, select:focus {
 
 
 
-input{
+input {
     width: 160px;
 }
 
@@ -236,7 +278,7 @@ input{
         flex-direction: column;
         align-items: stretch;
     }
-    
+
     .user-item {
         flex-wrap: wrap;
     }
@@ -296,7 +338,7 @@ input{
         flex-direction: column;
         align-items: stretch;
     }
-    
+
     .filter-group {
         max-width: 100%;
     }
@@ -379,7 +421,8 @@ body.locked {
 }
 
 body.authenticated .auth-only {
-    display: flex; /* или block, в зависимости от вашего layout */
+    display: flex;
+    /* или block, в зависимости от вашего layout */
 }
 
 
@@ -423,12 +466,14 @@ body.authenticated .auth-only {
         padding-bottom: 20px;
     }
 
-    input, select {
+    input,
+    select {
         font-size: 15px;
         padding: 10px;
     }
 
-    .form-group, .filter-group {
+    .form-group,
+    .filter-group {
         width: 100%;
     }
 
@@ -444,7 +489,8 @@ body.authenticated .auth-only {
         justify-content: space-between;
     }
 
-    .edit-btn, .delete-btn {
+    .edit-btn,
+    .delete-btn {
         flex: 1;
         font-size: 14px;
         padding: 10px;
@@ -480,7 +526,8 @@ body.authenticated .auth-only {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.5); /* Затемнение */
+    background: rgba(0, 0, 0, 0.5);
+    /* Затемнение */
     display: none;
     justify-content: center;
     align-items: center;
@@ -500,7 +547,8 @@ body.authenticated .auth-only {
 }
 
 .user-actions {
-    pointer-events: auto; /* Чтобы клики по кнопкам не триггерили переход на профиль */
+    pointer-events: auto;
+    /* Чтобы клики по кнопкам не триггерили переход на профиль */
 }
 
 .user-actions button {

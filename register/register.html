@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register — Galaxy Volleyball Club</title>
+    <link rel="stylesheet" href="/assets/css/register.css">
+</head>
+
+<body>
+    <div id="register-modal" class="modal show">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Register</h2>
+                <!-- <span class="close-modal">&times;</span> -->
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <label for="reg-firstname">Name <span class="required">*</span></label>
+                    <input type="text" id="reg-firstname" placeholder="Enter name" required>
+                </div>
+                <div class="input-group">
+                    <label for="reg-lastname">Surname <span class="required">*</span></label>
+                    <input type="text" id="reg-lastname" placeholder="Enter Surname" required>
+                </div>
+                <div class="input-group">
+                    <label for="reg-telegram">Telegram nick <span class="required">*</span></label>
+                    <input type="text" id="reg-telegram" placeholder="@username" required>
+                    <p class="input-hint">Attention! The Telegram nickname cannot be changed later. Enter it correctly,
+                        for example: @username</p>
+                    <p id="telegram-error" class="error-message"></p>
+                </div>
+                <div class="input-group">
+                    <label for="reg-email">Email <span class="required">*</span></label>
+                    <input type="email" id="reg-email" placeholder="Enter email" required>
+                </div>
+                <div class="input-group">
+                    <label for="reg-password">Password <span class="required">*</span></label>
+                    <input type="password" id="reg-password" placeholder="Enter password" required>
+                    <span class="toggle-password" onclick="togglePassword('reg-password')">show</span>
+                </div>
+                <div class="input-group">
+                    <label for="reg-confirm-password">Repeat password <span class="required">*</span></label>
+                    <input type="password" id="reg-confirm-password" placeholder="Repeat password" required>
+                    <span class="toggle-password" onclick="togglePassword('reg-confirm-password')">show</span>
+                </div>
+                <button id="register-submit" class="login-submit-btn">Register</button>
+                <p id="register-error" class="error-message"></p>
+                <p class="auth-switch">Already have an account? <a href="../index.html" id="show-login">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword(id) {
+            const input = document.getElementById(id);
+            if (input.type === "password") {
+                input.type = "text";
+            } else {
+                input.type = "password";
+            }
+        }
+    </script>
+</body>
+
+</html>
