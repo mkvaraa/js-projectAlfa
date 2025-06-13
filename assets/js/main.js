@@ -83,6 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     elements.loginModal.addEventListener('click', e => e.stopPropagation());
 
-    state.users = loadUsers(); // заменили прямую работу с localStorage
+    state.users = loadUsers(); 
     renderUsers(state, elements);
 });
